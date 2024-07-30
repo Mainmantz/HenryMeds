@@ -1,0 +1,6 @@
+fastapi[all] 
+sqlalchemy 
+databases 
+psycopg2-binary
+asyncpg
+apscheduler
