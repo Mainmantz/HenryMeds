@@ -31,6 +31,12 @@ python3.11 -m pip install -r requirements.txt
 python3.11 -m uvicorn main:app --reload
 ```
 
+## Tests
+
+```
+pytest tests/tests.py
+```
+
 ## Evaluation
 
 This will be evaluated similar to a real-world submission, including:
@@ -52,6 +58,8 @@ This will be evaluated similar to a real-world submission, including:
 * I had the debate between adding another column to slots to say whether or not its reserved but ultimately decided to do this via joins. I believe that helps with data redundancy so we are not keeping track of two "confirmed" fields but does introduce a join which could effect performance. Overall in this case, data consistency is more important than speed. 
 
 * Would also want to add some additional edge cases, for example, I in theory could book two appointments during the same timeframe if two different providers had a slot open.
+
+* MORE TESTS but with timing, at least wanted to get the usual fastapi scaffolding in place to showcase. 
 
 3. **How clean/well structured is the code?**
 * Follows basic python fastapi standards, would love to continue seperating lines of business out further if I had more time. Some additional improvements could also be type hints, further seperarting each model out into its our file, etc. 

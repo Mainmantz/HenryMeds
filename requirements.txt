@@ -4,3 +4,6 @@ databases
 psycopg2-binary
 asyncpg
 apscheduler
+pytest
+pytest-asyncio
+httpx

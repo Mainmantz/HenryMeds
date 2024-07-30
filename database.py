@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine, MetaData
-from sqlalchemy.ext.declarative import declarative_base
 from databases import Database
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, declarative_base
 
 DATABASE_URL = "postgresql://localhost/henrydb"
 

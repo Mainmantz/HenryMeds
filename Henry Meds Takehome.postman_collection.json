@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "a71932dc-33fe-4d20-b5c0-7b2b99bfddc5",
+		"name": "Henry Meds Takehome",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37056533"
+	},
+	"item": [
+		{
+			"name": "Submit Provider Availability",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"provider_name\": \"Dr. Jekyll\",\n  \"date\": \"2024-07-30\",\n  \"start_time\": \"12:00:00\",\n  \"end_time\": \"18:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/providers/availability",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"providers",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of available appointment slots",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/appointments/slots",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"appointments",
+						"slots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reserve Appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"slot_id\": \"1caf43aa-6098-485f-9571-81fcea45fb49\",\n  \"client_name\": \"James Mantz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/appointments/reserve",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"appointments",
+						"reserve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm Appointment",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/appointments/30cbe063-a775-4eef-8a6c-34391c28fbe7/confirm",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"appointments",
+						"30cbe063-a775-4eef-8a6c-34391c28fbe7",
+						"confirm"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
