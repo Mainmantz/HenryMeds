@@ -5,7 +5,7 @@ from database import engine
 from models.models import Reservation
 
 def expire_reservations():
-    print("expring reservations")
+    print("expiring reservations")
     with Session(engine) as session:
         expiration_time = datetime.now() - timedelta(minutes=30)
         expired_reservations = session.execute(
