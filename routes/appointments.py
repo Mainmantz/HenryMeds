@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends, status, BackgroundTasks
+from fastapi import APIRouter, HTTPException, Depends, status
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 from datetime import datetime, timedelta
@@ -7,7 +7,6 @@ from typing import List, Optional
 from models.models import AppointmentSlot, Reservation
 from models.schemas import AppointmentSlotSchema, ReservationRequestSchema
 from database import get_session
-from services import reservations
 
 router = APIRouter()
 

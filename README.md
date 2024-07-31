@@ -72,7 +72,7 @@ This will be evaluated similar to a real-world submission, including:
 * With more time, would want to form that relationship between the provider_availability and appointment_slots tables or decide if the provider_availability will ever be used. In a simple system, we could get away with just building the 15 slots with the given timeframe inputted. Having the table though, if we were to ever update the provider_availability table, it is more centralized and helps with future flexibility.
 
 3. **How clean/well structured is the code?**
-* Follows basic python fastapi standards, would love to continue seperating lines of business out further if I had more time. Some additional improvements could also be type hints, further seperarting each model out into its our file, etc. 
+* Follows basic python fastapi standards, would love to continue seperating lines of business out further if I had more time. Putting the app code in an API folder once we start getting dockerfiles, pipeline files, poetry files in some cases, etc. Some additional improvements could also be type hints, further seperarting each model out into its our file, etc. 
 
 4. **What ‘extra’ factors are there, that show exceptional talent?**
 * Setup local postgres henrydb to store everything instead of using a quicker API state. Showcasing more advanced Fastapi features, postman env for ease of test, error handling, and testing. Threw in some extra filters for some of the requests. Also uses an ORM approach rather than building up sql strings. 
