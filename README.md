@@ -1,7 +1,7 @@
 # Reservation - Backend v3
 
 ## Prerequisites
-- Running on a mac :) (trade off)
+- If running on a mac
 - Install homebrew  https://brew.sh/
 - (Optional) Install TablePlus if you want to have a nice view of your data https://tableplus.com/
 
@@ -20,6 +20,12 @@ To run postgres without using a background service so you can see the logs. Run 
 
 ```
 LC_ALL="C" /usr/local/opt/postgresql@15/bin/postgres -D /usr/local/var/postgresql@15
+```
+
+- If running on windows https://www.postgresql.org/download/windows/
+```
+psql -U userName
+CREATE DATABASE henrydb
 ```
 
 
@@ -63,8 +69,10 @@ This will be evaluated similar to a real-world submission, including:
 
 * Most of these decisions were because of time, in a production system we would love to see every one of these, so not wise overall but wise because of time constraints 
 
+* With more time, would want to form that relationship between the provider_availability and appointment_slots tables or decide if the provider_availability will ever be used. In a simple system, we could get away with just building the 15 slots with the given timeframe inputted. Having the table though, if we were to ever update the provider_availability table, it is more centralized and helps with future flexibility.
+
 3. **How clean/well structured is the code?**
 * Follows basic python fastapi standards, would love to continue seperating lines of business out further if I had more time. Some additional improvements could also be type hints, further seperarting each model out into its our file, etc. 
 
 4. **What ‘extra’ factors are there, that show exceptional talent?**
-* Setup local postgres henrydb to store everything instead of using a quicker API state. Showcasing more advanced Fastapi features, postman env for ease of test, error handling, and testing. Also uses an ORM approach rather than building up sql strings. 
+* Setup local postgres henrydb to store everything instead of using a quicker API state. Showcasing more advanced Fastapi features, postman env for ease of test, error handling, and testing. Threw in some extra filters for some of the requests. Also uses an ORM approach rather than building up sql strings. 
