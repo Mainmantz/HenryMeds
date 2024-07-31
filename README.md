@@ -53,16 +53,18 @@ This will be evaluated similar to a real-world submission, including:
 
 * Updating expired reservations every 15 minutes, would have to monitor user activity to overall see how well this would operate. Do we see a lot of not confirmed reservations? Is this a short enough cadence to allow good opportunities to fill appointments? Should the GET appointments call run this prior to returning results? 
 
-* Allow deletes but ran out of time / techincally not a requirement
+* Allow deletes but ran out of time / not a requirement
 
 * I had the debate between adding another column to slots to say whether or not its reserved but ultimately decided to do this via joins. I believe that helps with data redundancy so we are not keeping track of two "confirmed" fields but does introduce a join which could effect performance. Overall in this case, data consistency is more important than speed. 
 
-* Would also want to add some additional edge cases, for example, I in theory could book two appointments during the same timeframe if two different providers had a slot open.
+* Would also want to add some additional edge cases, for example, in theory could book two appointments during the same timeframe if two different providers had a slot open.
 
-* MORE TESTS but with timing, at least wanted to get the usual fastapi scaffolding in place to showcase. 
+* MORE TESTS but with timing, at least wanted to get the usual fastapi scaffolding in place to showcase. Another testing techinque we could use is creating abstractmethod functions to help us mock up our API. 
+
+* Most of these decisions were because of time, in a production system we would love to see every one of these, so not wise overall but wise because of time constraints 
 
 3. **How clean/well structured is the code?**
 * Follows basic python fastapi standards, would love to continue seperating lines of business out further if I had more time. Some additional improvements could also be type hints, further seperarting each model out into its our file, etc. 
 
 4. **What ‘extra’ factors are there, that show exceptional talent?**
-* Setup local postgres henrydb to store everything instead of using a quicker API state. Showcasing more advanced Fastapi features, postman env for ease of test, error handling. Also uses an ORM approach rather than building up sql strings. 
+* Setup local postgres henrydb to store everything instead of using a quicker API state. Showcasing more advanced Fastapi features, postman env for ease of test, error handling, and testing. Also uses an ORM approach rather than building up sql strings. 
